@@ -19,13 +19,10 @@ public class TCPSpyUsingTEAandPasswordsAndRSA {
             DataInputStream in = new DataInputStream(s.getInputStream());
             DataOutputStream out = new DataOutputStream(s.getOutputStream());
 
-            //out.writeUTF(args[0]);      	// UTF is a string encoding see Sn. 4.4
-            //String data = in.readUTF();	    // read a line of data from the stream
-            //System.out.println("Successfully connected2 ");
+
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                        // get key
-//                        System.out.println("Enter symmetric key for TEA (taking first sixteen bytes):");
-//                        tea=new TEA(br.readLine().getBytes());
+            
+            tea=new TEA(br.readLine().getBytes());
 
             // random generate 16 byte keys. 
             Random rnd = new Random();
@@ -52,7 +49,6 @@ public class TCPSpyUsingTEAandPasswordsAndRSA {
             sb.append(br.readLine() + "\t");
             System.out.print("Enter your location: ");
             sb.append(br.readLine());
-                        //System.out.println("Thank you. Your location was securely transmitted to Intelligence Headquarters");
 
             // encrypt
             byte[] cipher = tea.encrypt(String.valueOf(sb).getBytes());
@@ -60,7 +56,6 @@ public class TCPSpyUsingTEAandPasswordsAndRSA {
             out.write(cipher);
             out.flush();
 
-//                        System.out.println("Checking ");
             // receive message from server
             byte[] mes = new byte[1024];
             int len = in.read(mes);
@@ -72,11 +67,6 @@ public class TCPSpyUsingTEAandPasswordsAndRSA {
                 res[i] = mes[i];
             }
             System.out.println(new String(res));
-//                        byte[] decryptRes=tea.decrypt(res);
-//                        //System.out.println("Checking ");
-//                        System.out.println(res.length);
-//                        System.out.println(new String(res));
-//                        System.out.println(new String(decryptRes));
 
             out.close();
             in.close();
