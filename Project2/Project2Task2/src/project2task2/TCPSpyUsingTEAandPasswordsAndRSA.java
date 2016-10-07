@@ -28,9 +28,7 @@ public class TCPSpyUsingTEAandPasswordsAndRSA {
             Random rnd = new Random();
             BigInteger key = new BigInteger(16 * 8, rnd);
             BigInteger n = new BigInteger("2119748904166709409243290358410807820808581827052084601149139982309968602158071144945899641381472325867645883931435994871892742640324649543872540694192205129788278697898849001867194342017688743483956494826016338422370812398607767968684454599");
-            // Step 4: Select a small odd integer e that is relatively prime to phi(n).
-            // By convention the prime 65537 is used as the public exponent.
-            BigInteger e = new BigInteger("65537");
+            BigInteger e = new BigInteger("65537");// public key
 
             // send key to server
             BigInteger m = new BigInteger(key.toString().getBytes()); // m is the original clear text
