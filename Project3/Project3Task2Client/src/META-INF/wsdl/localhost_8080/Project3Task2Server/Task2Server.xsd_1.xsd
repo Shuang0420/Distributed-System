@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://sxu1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://sxu1/">
+
+<xs:element name="getLastTemperature" type="tns:getLastTemperature"/>
+
+<xs:element name="getLastTemperatureResponse" type="tns:getLastTemperatureResponse"/>
+
+<xs:element name="getTemperatures" type="tns:getTemperatures"/>
+
+<xs:element name="getTemperaturesResponse" type="tns:getTemperaturesResponse"/>
+
+<xs:element name="highTemperature" type="tns:highTemperature"/>
+
+<xs:element name="highTemperatureResponse" type="tns:highTemperatureResponse"/>
+
+<xs:element name="lowTemperature" type="tns:lowTemperature"/>
+
+<xs:element name="lowTemperatureResponse" type="tns:lowTemperatureResponse"/>
+
+<xs:complexType name="getLastTemperature">
+<xs:sequence>
+<xs:element name="sensorID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLastTemperatureResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="highTemperature">
+<xs:sequence>
+<xs:element name="xmlString" type="xs:string" minOccurs="0"/>
+<xs:element name="signature" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="highTemperatureResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lowTemperature">
+<xs:sequence>
+<xs:element name="xmlString" type="xs:string" minOccurs="0"/>
+<xs:element name="signature" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lowTemperatureResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTemperatures">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTemperaturesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
